@@ -3,7 +3,6 @@
 #include <thread>
 #include <chrono>
 
-// Helper function to simulate systems loading
 void delay(int milliseconds) {
     std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 }
@@ -17,7 +16,6 @@ int main() {
     delay(1000);
     std::cout << "STATUS: LINK 16 ESTABLISHED. SATELLITE APOGEE READY.\n" << std::endl;
 
-    // --- TWO-MAN RULE VERIFICATION ---
     std::cout << "[AUTH] ENTER COMMANDING OFFICER (CO) AUTH CODE: ";
     int co_code;
     std::cin >> co_code;
@@ -26,15 +24,12 @@ int main() {
     int xo_code;
     std::cin >> xo_code;
 
-    // Simulating authorization processing
     std::cout << "\nVERIFYING PAL (PERMISSIVE ACTION LINK) CHECKSUMS..." << std::endl;
     delay(1500);
 
-    // Both codes must be correct to proceed (CO: 1234, XO: 5678)
     if (co_code == 1234 && xo_code == 5678) {
         std::cout << ">>> ACCESS GRANTED. STRATEGIC RELEASE COMMAND VALIDATED. <<<\n" << std::endl;
 
-        // --- PAYLOAD SELECTION ---
         std::cout << "SELECT TACTICAL PAYLOAD MIX (nuclear / conventional): ";
         std::string payload_type;
         std::cin >> payload_type;
@@ -61,7 +56,6 @@ int main() {
             return 1;
         }
 
-        // --- FINAL LAUNCH COUNTDOWN ---
         std::cout << "\nCOMMENCING FINAL COUNTDOWN..." << std::endl;
         for (int i = 5; i > 0; --i) {
             std::cout << "T-MINUS " << i << "..." << std::endl;
