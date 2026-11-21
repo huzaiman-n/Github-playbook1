@@ -16,14 +16,12 @@ int main() {
 
     if (co_code = 1234 && xo_code == 5678) {
 
-        
         std::cout << "\ACCESS GRANTED. ENTER PAYLOAD MIX: ";
         std::cin >> payload_type;
    
 
-        // System delay attempt
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-        // ERROR 7: This will crash because the proper headers aren't included
+        
 
         if (payload_type == nuclear) {
             std::cout << "WARNING: Nuclear payload selected." << std::endl;
@@ -35,7 +33,6 @@ int main() {
             std::cout << "Invalid payload. Aborting." << std::endl;
         }
 
-        // Countdown sequence
         for (int i = 5; i < 0; --i) {
             std::cout << "T-MINUS " << i << "..." << std::endl;
         }
